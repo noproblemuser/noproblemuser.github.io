@@ -145,9 +145,28 @@
       
 
 
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                学习笔记
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ing/" rel="tag">ing</a></li></ul>
+    </div>
+  </div>
+
 
     
       
@@ -158,7 +177,7 @@
       
         <a class="archive-link" href="/archives/2023/08 ">
           八月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">1 </div>
         </a>
       
     </div>
@@ -172,15 +191,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/08/03/web/" title="" >
+          <a class="recent-link" href="/2023/08/03/Linux/" title="mindmap" >
             <div class="recent-link-text">
-              (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/08/02/hello-world/" title="Hello World" >
-            <div class="recent-link-text">
-              Hello World
+              mindmap
             </div>
           </a>
         
@@ -196,7 +209,7 @@
       
    
 
-<article id="post-web" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-Linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -207,7 +220,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/03/web/">无标题</a>
+        <a class="p-name article-title" href="/2023/08/03/Linux/">mindmap</a>
       </h1>
     
   
@@ -215,26 +228,52 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-03T06:05:13.994Z" itemprop="datePublished">2023-08-03</time>
+  <time class="dt-published" datetime="2023-08-03T08:29:54.000Z" itemprop="datePublished">2023-08-03</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            0 词 
+            3.4k 词 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ing/" rel="tag">ing</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-              
+            掌握查看主机运行状态的监控命令s可以通过top命令查看CPU、内存使用情况，类似Windows的任务管理器
+top命令选项
+
+​	-p   只显示某个进程的信息
+​	-d   设置刷新时间，默认是5s
+​	-c   显示产生进程的完整命令，默认是进程名
+​	-n   指定刷新次数，比如 top  -n  3，刷新输出3次后退出
+​	-b   以非交互全屏模式运行top，一般配合-n指定输出几次统计信息，将输出重定向到指定文件，比如 top -b -n 3 &gt;  &#x2F;tmp&#x2F;top.tmp
+​	-i   不显示任何闲置（idle）或无用（zombie）的进程
+​	-u   查找特定用户启动的进程
+
+top交互式选项
+
+
+
+磁盘信息监控
+
+使用df命令，可以查看硬盘的使用情况
+语法：df[ -h ]
+选项：-h ，以更加人性化的单位显示
+
+使用iostat的-x 选项，可以显示更多信息
+
+
+rrqm&#x2F;s： 每秒这个设备相关的读取请求有多少被Merge了（当系统调用需要读取数据的时候，VFS将请求发到各个FS，如果FS发现不同的读取请求读取的是相同Bl...  
           </div>
         
       </div>
@@ -245,84 +284,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2023/08/03/web/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/02/hello-world/">Hello World</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-02T13:27:31.916Z" itemprop="datePublished">2023-08-02</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    未分类 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            78 词 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
-
-More info: Writing
-Run server1$ hexo server
-
-More info: Server
-Generate static files1$ hexo generate
-
-More info: Generating
-Deploy to remote sites1$ hexo deploy
-
-More info: Deployment
-  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/08/02/hello-world/" 
+      href="/2023/08/03/Linux/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
