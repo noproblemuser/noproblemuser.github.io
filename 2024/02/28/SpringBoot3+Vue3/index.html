@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="课程安排概述：Spring Boot使Spring提供的一个子项目，用于快速构建Spring应用程序 自动配置： ​		遵循约定大于配置的原则，在boot程序启动后，一些bean对象会自动注入到ioc容器，不需要手动声明 其他特性：  内嵌的Tomcat、Jetty（无需部署WAR文件）  外部化配置  不需要XML配置（properties&#x2F;yml） SpringBoot入门：  创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://noproblemuser.github.io/2024/02/28/SpringBoot3+Vue3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="课程安排概述：Spring Boot使Spring提供的一个子项目，用于快速构建Spring应用程序 自动配置： ​		遵循约定大于配置的原则，在boot程序启动后，一些bean对象会自动注入到ioc容器，不需要手动声明 其他特性：  内嵌的Tomcat、Jetty（无需部署WAR文件）  外部化配置  不需要XML配置（properties&#x2F;yml） SpringBoot入门：  创建">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\strawberry\AppData\Roaming\Typora\typora-user-images\image-20240228150953605.png">
+<meta property="article:published_time" content="2024-02-28T07:07:53.260Z">
+<meta property="article:modified_time" content="2024-03-19T07:37:53.614Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\strawberry\AppData\Roaming\Typora\typora-user-images\image-20240228150953605.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/banner.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Hexo </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/avatar.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Ming </div>
+      <div class="dot"></div>
+      <div class="subtitle">This is the subtitle </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                学习笔记
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%BB%83%E4%B9%A0%E9%A1%B9%E7%9B%AE/">
+                练习项目
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ing/" rel="tag">ing</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/project/" rel="tag">project</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/studing/" rel="tag">studing</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2024/05 ">
+          五月 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/02 ">
+          二月 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2024/05/06/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/02/28/SpringBoot3+Vue3/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/10/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%9A%84%E6%B5%81%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%AC%94%E8%AE%B0/" title="project" >
+            <div class="recent-link-text">
+              project
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/09/Vue/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/03/Linux/" title="Linux" >
+            <div class="recent-link-text">
+              Linux
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-SpringBoot3+Vue3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        无标题
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-02-28T07:07:53.260Z" itemprop="datePublished">2024-02-28</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    未分类 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.3k 词 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h3 id="课程安排"><a href="#课程安排" class="headerlink" title="课程安排"></a>课程安排<img src="C:\Users\strawberry\AppData\Roaming\Typora\typora-user-images\image-20240228150953605.png" alt="image-20240228150953605"></h3><h2 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h2><p>Spring Boot使Spring提供的一个子项目，用于快速构建Spring应用程序</p>
+<p>自动配置：</p>
+<p>​		遵循约定大于配置的原则，在boot程序启动后，一些bean对象会自动注入到ioc容器，不需要手动声明</p>
+<p>其他特性：</p>
+<ul>
+<li><p>内嵌的Tomcat、Jetty（无需部署WAR文件）</p>
+</li>
+<li><p>外部化配置</p>
+</li>
+<li><p>不需要XML配置（properties&#x2F;yml）</p>
+<p>SpringBoot入门：</p>
+</li>
+<li><p>创建Maven工程</p>
+</li>
+<li><p>导入spring-boot-stater-web起步依赖</p>
+</li>
+<li><p>编写Controller</p>
+</li>
+<li><p>提供启动类</p>
+</li>
+</ul>
+<p>yml配置信息书写与获取：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">email:</span><br><span class="line">	user: 3069***635@qq.com</span><br><span class="line">	code: ********</span><br><span class="line">	host: smtp:qq.com</span><br><span class="line">	auth: true</span><br></pre></td></tr></table></figure>
+
+<p>配置信息书写：</p>
+<ul>
+<li>值前必须有空格，作为分隔符</li>
+<li>使用空格作为缩进表示层级关系，相同的层级左侧对齐</li>
+</ul>
+<p>配置信息获取：</p>
+<ul>
+<li>@Value(“${键名}”)</li>
+<li>@ConfigurationProperties(prefix &#x3D; “前缀”)</li>
+</ul>
+<p>Bean注册</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+<th>位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@Conponent</td>
+<td>声明bean的基础注解</td>
+<td>不属于以下三类时，用此注解</td>
+</tr>
+<tr>
+<td>@Controller</td>
+<td>@Component的衍生注解</td>
+<td>标注在控制器类上</td>
+</tr>
+<tr>
+<td>@Service</td>
+<td>@Component的衍生注解</td>
+<td>标注在业务类上</td>
+</tr>
+<tr>
+<td>@Repository</td>
+<td>@Component的衍生注解</td>
+<td>数据访问类上（使用较少）</td>
+</tr>
+</tbody></table>
+<p>注册条件</p>
+<p>SpringBoot提供了设置注册生效条件的注解@Conditional</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@ConditionalOnProperty</td>
+<td>配置文件存在对应的属性，才声明该bean</td>
+</tr>
+<tr>
+<td>@ConditionalOnMissingBean</td>
+<td>当不存在当前类型的bean时，才声明该bean</td>
+</tr>
+<tr>
+<td>@ConditionalOnClass</td>
+<td>当前环境存在指定的这个类时，才声明该bean</td>
+</tr>
+</tbody></table>
+<p>自动配置原理</p>
+<p>遵循约定大约配置的原则，在boot程序启动后，起步依赖中的一些bean对象会自动注入到ioc容器</p>
+<p>自动配置的原理分以下几步：</p>
+<ul>
+<li>在主启动类上添加了SpringBootApplication注解，这个注解组合了EnableAytoConfiguration注解</li>
+<li>而EnableAutoConfiguration注解又组合了Import注解，导入了AutoConfigurationImportSelector类</li>
+<li>实现selectInports方法，这个方法经过层层调用，最终会读取META-INF目录下的后缀名为import的文件，当然，boot2.7版本以前读取的是spring.fatories文件，2.7-3.0之间是两者都会读取，而3.0版本之后则是只读取imports文件</li>
+<li>读取到全类名了之后，会解析注册条件，也就是@Conditional及其衍生注解，把满足这侧条件的Bean对象自动注入到IOC容器中</li>
+</ul>
+<p>自定义starter</p>
+<p>需求：自定义mybatis的starter</p>
+<p>步骤：</p>
+<ul>
+<li>创建dmybatis-spring-boot-autoconfigure模块，提供自动装配功能，并自定义配置问价META-INF&#x2F;spring&#x2F;xxx。imports</li>
+<li>创建dmybatis-spring-boot-starter 模块，在starter中引入自动装配模块</li>
+</ul>
+<p>实战：</p>
+<p>环境搭建：</p>
+<ul>
+<li>执行资料中的big_event.sql脚本，准备数据库</li>
+<li>创建springboot工程，引入对应的依赖（web、mybatis、MySQL驱动）</li>
+<li>配置文件application.yml中引入mybatis的配置心意</li>
+<li>创建包结构，并准备实体类</li>
+</ul>
+<p><u>小工具</u>：在pom文件中引入依赖Lombok，可以使用@Data注解再在maven中重新编译，来自动实现编译时的get和set方法以及tostring方法</p>
+<p>开发接口的流程</p>
+<ul>
+<li><p>明确需求</p>
+</li>
+<li><p>阅读接口文档</p>
+</li>
+<li><p>思路分析</p>
+</li>
+<li><p>开发   Lombok  Result   Md5</p>
+</li>
+<li><p>测试（postman）</p>
+<p>登陆验证：</p>
+</li>
+</ul>
+<p>令牌的组成：</p>
+<ul>
+<li>Header，记录令牌类型和签名算法等</li>
+<li>PayLoad（荷载），携带自定义的信息</li>
+<li>Signature（签名），对头部和荷载进行加密运算得来</li>
+</ul>
+<p>使用：</p>
+<ul>
+<li>引入java-jwt坐标</li>
+<li>调用API生成和校验令牌</li>
+<li>解析令牌抛出异常，就证明令牌被篡改或过期了</li>
+</ul>
+<p>令牌就是一段字符串</p>
+<ul>
+<li>承载业务数据，减少后续请求查询数据库的次数</li>
+<li>防篡改，保证信息的合法性和有效性</li>
+</ul>
+<p>JWT密钥生成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testGen</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    Map&lt;String,Object&gt; claim = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    claim.put(<span class="string">&quot;id&quot;</span>,<span class="number">1</span>);</span><br><span class="line">    claim.put(<span class="string">&quot;username&quot;</span>,<span class="string">&quot;曹盖&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">String</span> <span class="variable">token</span> <span class="operator">=</span>JWT.create()</span><br><span class="line">            .withClaim(<span class="string">&quot;user&quot;</span>,claim)</span><br><span class="line">            .withExpiresAt(<span class="keyword">new</span> <span class="title class_">Date</span>(System.currentTimeMillis()+<span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">12</span>))</span><br><span class="line">            .sign(Algorithm.HMAC256(<span class="string">&quot;cg&quot;</span>));</span><br><span class="line"></span><br><span class="line">    System.out.println(token);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JWT令牌验证</p>
+<ul>
+<li>JWT校验时使用的签名密钥，必须和生成JWT令牌时使用的密钥是配套的</li>
+<li>如果JWT令牌解析校验时报错，则说明JWT令牌被篡改或失效了，令牌非法</li>
+</ul>
+<p>登录认证：使用拦截器统一验证令牌，登录和注册接口需要放行</p>
+<p>获取用户信息工具：ThreadLocal</p>
+<ul>
+<li>用来存取数据  set&#x2F;get方法</li>
+<li>使用ThreadLocal存储的数据，线程安全</li>
+<li>用完使用remove方法释放，一般重写afterCompletion方法进行remove</li>
+</ul>
+<p>实体参数校验：</p>
+<ul>
+<li>实体类的成员变量添加注解<ul>
+<li>@NotNull     值不能为空</li>
+<li>@NotEmpty   值不能为空，并且内容不为空</li>
+<li>@Email         满足邮箱格式</li>
+</ul>
+</li>
+<li>接口方法的实体类参数上添加@Validated注解</li>
+</ul>
+<p>文章的分类：</p>
+<ul>
+<li>新增文章分类<ul>
+<li>使用validation完成参数校验</li>
+<li>在service层需要为Category测creatiUser、createTime、updateTime属性赋值</li>
+</ul>
+</li>
+<li>文章分类列表</li>
+<li>获取文章分类详情</li>
+<li>更新文章分类</li>
+<li>删除文章分类</li>
+</ul>
+<p>文章管理：</p>
+<ul>
+<li>新增文章</li>
+<li>文章列表（条件分页）</li>
+<li>获取文章详情</li>
+<li>更新文章</li>
+<li>删除文章</li>
+</ul>
+<p>登陆优化：-redis-令牌主动失效机制</p>
+<ul>
+<li>登陆成功后，给浏览器相应令牌的同时，把该令牌存储到redis中</li>
+<li>Loginlnterceptor拦截器中，需要验证浏览器携带的令牌，并同时需要获取到redis中存储的与之相同的令牌</li>
+<li>当用户修改密码成功后，删除redis中存储的旧令牌</li>
+</ul>
+<p>SpringBoot集成redis</p>
+<ul>
+<li><p>导入spring-boot-starter-data-redis起步依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>在yml配置文件中，配置redis连接信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    data:</span><br><span class="line">        redis:</span><br><span class="line">            host:localhost</span><br><span class="line">            port:6309</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>调用API（StringRedisTemplate）完成字符串的存取操作</p>
+</li>
+</ul>
+<p>令牌主动失效机制</p>
+<ul>
+<li>登陆成功后，给浏览器相应令牌的同时，把该令牌存储到redis中</li>
+<li>Loginlnterceptor拦截器中，需要验证浏览器携带的令牌，并同时需要获取到redis中存储的与之相同的令牌</li>
+<li>当用户修改密码成功后，删除redis中存储的旧令牌</li>
+</ul>
+<p>项目部署：属性配置方式</p>
+<ul>
+<li>项目中resources目录下的application.yml</li>
+<li>Jar包所在目录下的application.yml</li>
+<li>操作系统环境变量</li>
+<li>命令行参数</li>
+</ul>
+<p>多环境开发-Pofiles</p>
+<p>SpringBoot提供的Profiles可以用来隔离应用程序配置的各个部分，并在特定环境下指定部分配置生效</p>
+<ul>
+<li><p>如何分割不同环境的配置   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何指定哪些配置属于哪个环境  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    config:</span><br><span class="line">       active:</span><br><span class="line">           on-profile:环境名称</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何指定哪个环境配置生效</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    profiles:</span><br><span class="line">        active:环境名称</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Vue3</p>
+<p>前置知识</p>
+<ul>
+<li>html</li>
+<li>css</li>
+<li>javascript</li>
+<li>visual studio code</li>
+</ul>
+<p>js的导入导出</p>
+<ul>
+<li><p>导出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export&#123;</span><br><span class="line">	export  内容</span><br><span class="line">	export  &#123;内容1，内容2&#125;</span><br><span class="line">	export  default</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script tupe=&quot;module&quot;&gt;</span><br><span class="line">	import &#123; ... &#125; from &#x27;.....&#x27;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>as可以用来起别名</p>
+</li>
+</ul>
+<p>快读入门</p>
+<ul>
+<li>准备<ul>
+<li>准备html页面，并引入Vue模块</li>
+<li>创建Vue程序的应用实例</li>
+<li>准备元素（div），被vue控制</li>
+</ul>
+</li>
+<li>构建用户页面<ul>
+<li>准备数据</li>
+<li>通过插值表达式渲染页面</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;&gt;</span>/div</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;https://unpkg.com/vue@3/dist/vue/esm-browser.js&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="title function_">createApp</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">		<span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">				<span class="attr">msg</span>: <span class="string">&quot;hello vue3&quot;</span></span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript">	&#125;).<span class="title function_">mount</span>(<span class="string">&quot;#app&quot;</span>)</span></span><br><span class="line"><span class="language-javascript">	</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>v-for 指令</p>
+<ul>
+<li>作用：基于数据循环，多次渲染整个元素</li>
+<li>语法：v-for &#x3D; “(item,index) in items”</li>
+</ul>
+<p>v-bind 指令</p>
+<ul>
+<li>作用：动态为HTML标签绑定属性值，如设置href，src，style样式等</li>
+<li>语法：v-bind：属性名&#x3D;”属性值”</li>
+<li>简化：: 属性名&#x3D;”属性值”</li>
+</ul>
+<p>v-if &amp; v-show</p>
+<ul>
+<li>作用：这两类指令，都是用来控制元素的显示与隐藏的</li>
+<li>v-if<ul>
+<li>语法：v-if&#x3D;”表达式”，表达式值为 true ，显示；false，隐藏</li>
+<li>其它：可以配合 v-else-if &#x2F; v-else 进行链式调用条件判断</li>
+<li>原理：基于条件判断，来控制创建或移除元素节点（条件渲染）</li>
+</ul>
+</li>
+<li>v-show<ul>
+<li>语法：v-show &#x3D; “表达式”，表达式值为 true ，显示；false，隐藏</li>
+<li>原理：基于CSS样式display来控制显示与隐藏</li>
+</ul>
+</li>
+<li>v-if与v-show的区别？<ul>
+<li>v-if是根据条件判断是创建还是移除节点</li>
+<li>v-show是根据CSS样式display来控制显示与隐藏</li>
+</ul>
+</li>
+<li>v-if与v-show的适用场景？<ul>
+<li>v-if 适用于显示与隐藏切换不频繁的场景</li>
+<li>v-show 适用于显示与隐藏切换频繁的场景</li>
+</ul>
+</li>
+</ul>
+<p>v-on指令</p>
+<ul>
+<li>作用：为HTML的元素绑定事件</li>
+<li>语法：v-on：事件名&#x3D;”函数名”<ul>
+<li>@事件名&#x3D;”函数名”</li>
+</ul>
+</li>
+<li>函数需要定义在methods选项内部</li>
+</ul>
+<p>v-model</p>
+<ul>
+<li>作用：在表单元素上使用，双向数据绑定，可以方便获取或设置表单项数据</li>
+<li>语法：v-model&#x3D;”变量名”</li>
+</ul>
+<p>注解@CrossOrigin  &#x2F;&#x2F;表示支持跨域</p>
+<p>Axios发送异步请求</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script  src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt; &lt;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>Get:    axios.get(url).then((res)&#x3D;&gt;{……}).catch(( err ) &#x3D; &gt;{ … })</li>
+<li>POST:   axios.post(url , data) . then(( res ) &#x3D;&gt;{ … }).catch(( err ) &#x3D;&gt; { … })</li>
+</ul>
+<p>创建Vue项目</p>
+<p>命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue-test&gt;npm init vue@latest   //创建一个Vue项目</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd  项目名称  //进入项目</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install  //安装vue项目框架</span><br></pre></td></tr></table></figure>
+
+
+
+<p>两种启动Vue项目的启动方式</p>
+<ul>
+<li>执行命令： npm  run  dev  ,就可以启动vue项目</li>
+<li>访问项目：打开浏览器，在浏览器地址访问：  <a target="_blank" rel="noopener" href="http://127.0.0.1:5173/">http://127.0.0.1:5173</a>  就可以访问到vue项目</li>
+</ul>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/05/06/%E9%9D%A2%E8%AF%95%E9%A2%98%E7%AC%94%E8%AE%B0/"
+      title=""
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        (No Title)
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/08/10/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%9A%84%E6%B5%81%E7%A8%8B%E4%BB%A5%E5%8F%8A%E7%AC%94%E8%AE%B0/"
+      title="project"
+     >
+
+    <p class="title-text">
+      
+        project
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 Ming<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.style.opacity = 1;
+        } else {
+            btn.style.opacity = 0;
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
